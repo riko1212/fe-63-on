@@ -1,55 +1,242 @@
-#text,
-#text-new {
-  color: aqua;
+:root {
+  --main-title-color: #ffffff;
+  --second-title-color: #303030;
+  --main-btn-color: #ffffff;
+  --second-btn-color: #303030;
+  --typical-lh: 1.36;
+  --accent-color: #ff6c00;
 }
 
 body {
   font-family: 'Open Sans', sans-serif;
-  color: blue;
 }
 
 .list {
   list-style: none;
 }
 
-.header-list.list {
+.link {
+  text-decoration: none;
 }
 
-.header a {
-  color: blue;
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
 }
 
-p {
-  color: brown;
+.title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.17;
+  letter-spacing: 0.05em;
 }
 
-.header-link {
-  color: green;
+.pre-title {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
-* {
-  color: tomato;
+.after-title {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
 }
 
-[href="https://www.google.com/"]
-{
-  color: rgb(184, 11, 164);
+.btn {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
 }
 
-.hero-pre-title + h1 {
-  color: red;
+/* --------------HEADER ------------*/
+
+.header {
+  background-color: gray;
+}
+.header-link,
+.header-tel {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: #ffffff;
 }
 
-.header-item ~ .header-item {
-  background-color: aquamarine;
+.header-link:hover,
+.header-link:focus {
+  color: #ff6c00;
 }
 
-/* Селектори      
-- Універсальний   * 
-- Тег             p
-- ID              #text
-- клас            .header-link
-- Атрибута        [href]
-- Дочірній        .header > a
-- Нащадка         .header a
- */
+/* .header-tel {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+} */
+
+.header-btn {
+  color: #ffffff;
+}
+
+/* --------------HERO ------------*/
+
+.hero {
+  background-color: #787474;
+}
+
+.hero-link {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.2em;
+  color: #303030;
+}
+
+.hero-pre-title {
+  color: rgba(157, 164, 189, 0.6);
+}
+
+.hero-title {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 700;
+  font-size: 72px;
+  line-height: 1.18;
+  letter-spacing: 0.05em;
+  color: var(--main-title-color);
+}
+
+.hero-after-title {
+  color: #9da4bd;
+}
+
+/* --------------ABOUT ------------*/
+
+.about-pre-title {
+  color: #303030;
+}
+.about-title {
+  color: var(--second-title-color);
+}
+.about-after-title {
+  color: #555555;
+}
+.about-text {
+  font-size: 14px;
+  line-height: 1.86;
+  letter-spacing: 0.02em;
+
+  color: #555555;
+}
+.about-btn {
+  color: var(--second-btn-color);
+}
+
+/* --------------PRICES ------------*/
+
+.prices {
+  background-color: #303030;
+}
+.prices-pre-title {
+  color: rgba(157, 164, 189, 0.6);
+}
+.prices-title {
+  color: var(--main-title-color);
+}
+.prices-list-text {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+  color: #9da4bd;
+}
+
+.prices-btn {
+  color: var(--main-btn-color);
+}
+
+/* --------------BENEFITS ------------*/
+
+.benefits {
+}
+
+.benefits-item span {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: calc(57 / 42);
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #303030;
+}
+
+.benefits-item sup {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: calc(22 / 16);
+  text-align: center;
+  color: #ff6c00;
+}
+
+.benefits-item-text {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: var(--typical-lh);
+  text-align: center;
+  color: #303030;
+}
+.benefits-pre-title {
+  color: #303030;
+}
+.benefits-title {
+  color: var(--second-title-color);
+}
+
+.benefits-after-title {
+  color: #555555;
+}
+
+/* --------------BARBERS ------------*/
+
+.barbers-pre-title {
+  color: #303030;
+}
+
+.barbers-title {
+  color: var(--second-title-color);
+}
+
+.barbers-item-title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: calc(25 / 18);
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #303030;
+}
+.barbers-item-text {
+  font-size: 14px;
+  line-height: calc(19 / 14);
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #ff6c00;
+}
+
+/* --------------GALLERY ------------*/
+
+.gallery-pre-title {
+  color: #303030;
+}
