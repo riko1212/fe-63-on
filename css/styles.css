@@ -96,12 +96,17 @@ body {
 }
 
 .btn {
+  min-width: 160px;
+  height: 40px;
   font-family: inherit;
   font-weight: 600;
   font-size: 12px;
   line-height: 1.33;
   letter-spacing: 0.09em;
   text-transform: uppercase;
+  border: 1px solid #ff6c00;
+  border-radius: 25px;
+  background-color: transparent;
 }
 
 /* --------------HEADER ------------*/
@@ -111,6 +116,24 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
 }
+
+.header .container {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo {
+  margin-right: 130px;
+}
+
+.header-list {
+  display: flex;
+  column-gap: 30px;
+}
+
+/* .header-item:not(:last-child) {
+  margin-right: 30px;
+} */
 .header-link,
 .header-tel {
   font-weight: 600;
@@ -125,6 +148,10 @@ body {
   color: #ff6c00;
 }
 
+.header-connect {
+  margin-left: auto;
+}
+
 /* .header-tel {
   font-weight: 600;
   font-size: 12px;
@@ -135,12 +162,17 @@ body {
 
 .header-btn {
   color: #ffffff;
+  margin-left: 30px;
 }
 
 /* --------------HERO ------------*/
 
-.hero {
-  background-color: #787474;
+.hero .container {
+  display: flex;
+}
+
+.hero-list {
+  width: 100px;
 }
 
 .hero-link {
@@ -152,7 +184,9 @@ body {
 }
 
 .hero-content {
+  background-color: #787474;
   padding: 272px 100px 206px 100px;
+  flex-grow: 1;
 }
 
 .hero-pre-title {
@@ -176,6 +210,20 @@ body {
 }
 
 /* --------------ABOUT ------------*/
+
+.about .container {
+  display: flex;
+  column-gap: 30px;
+}
+
+.about-list {
+  display: flex;
+  column-gap: 30px;
+}
+
+.about-content {
+  max-width: 470px;
+}
 
 .about-pre-title {
   color: #303030;
@@ -215,13 +263,25 @@ body {
   margin-bottom: 44px;
 }
 
+.prices-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
 .prices-list {
   border: 1px solid #ffffff;
   padding: 30px 40px;
+  width: calc(50% - 15px);
 }
 
 .prices-item {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prices-item:last-child {
+  margin-bottom: 0;
 }
 .prices-list-text {
   font-size: 18px;
@@ -291,10 +351,21 @@ body {
 
 .barbers-pre-title {
   color: #303030;
+  margin: 20px;
 }
 
 .barbers-title {
   color: var(--second-title-color);
+  margin-bottom: 44px;
+}
+
+.barbers-list {
+  display: flex;
+  gap: 30px;
+}
+
+.barbers-item {
+  width: calc((100% - 60px) / 3);
 }
 
 .barbers-item-title {
@@ -324,4 +395,26 @@ body {
 
 .gallery-pre-title {
   color: #303030;
+  margin-bottom: 40px;
 }
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.gallery-item {
+  width: calc((100% - 90px) / 4);
+}
+
+/* .gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: -15px;
+}
+
+.gallery-item {
+  width: calc((100% - 120px) / 4);
+  margin: 15px;
+} */
