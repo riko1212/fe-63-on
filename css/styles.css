@@ -87,6 +87,16 @@ body {
   line-height: 1.36;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.pre-title::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: currentColor;
 }
 
 .after-title {
@@ -207,6 +217,25 @@ body {
   letter-spacing: 0.05em;
   color: var(--main-title-color);
   margin-bottom: 20px;
+  display: flex;
+  align-items: baseline;
+}
+
+.hero-title::before {
+  content: '';
+  width: 40px;
+  height: 40px;
+  background-image: url(../img/about-img-1.jpeg);
+  background-size: cover;
+}
+
+.hero-title:hover::before {
+  background: #303030;
+}
+
+.hero-title::after {
+  content: '';
+  margin-left: 10px;
 }
 
 .hero-after-title {
@@ -280,15 +309,41 @@ body {
 }
 
 .prices-list {
-  border: 1px solid #ffffff;
   padding: 30px 40px;
   width: calc(50% - 15px);
+}
+
+.prices-list:first-child {
+  background-image: linear-gradient(
+    180deg,
+    #171a24 0%,
+    rgba(23, 26, 36, 0.2) 100%
+  );
+}
+
+.prices-list:last-child {
+  background-image: linear-gradient(
+    180deg,
+    #090b13 0%,
+    rgba(9, 11, 19, 0.2) 100%
+  );
 }
 
 .prices-item {
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+}
+
+.prices-item::after {
+  content: '';
+  width: 100px;
+  height: 1px;
+  background-color: rgba(157, 164, 189, 0.12);
+  flex-grow: 1;
+  margin-left: 12px;
+  margin-right: 12px;
 }
 
 .prices-item:last-child {
@@ -299,6 +354,10 @@ body {
   line-height: 1.67;
   letter-spacing: 0.02em;
   color: #9da4bd;
+}
+
+.prices-list-text:last-child {
+  order: 1;
 }
 
 .prices-btn {
@@ -314,10 +373,39 @@ body {
   padding-top: 121px;
 }
 
+.benefits-cards {
+  width: calc(50% - 15px);
+  display: flex;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.benefits-content {
+  max-width: 500px;
+  padding-top: 9px;
+}
+
+.benefits .container {
+  display: flex;
+}
+
+.benefits-list {
+  display: flex;
+  width: 370px;
+  flex-wrap: wrap;
+}
+
+.benefits-item:nth-child(even) {
+  margin-top: 30px;
+}
+.benefits-item:nth-child(odd) {
+  margin-right: 30px;
+}
+
 .benefits-item {
   width: 170px;
   height: 133px;
-  border: 1px solid #000000;
+  background-color: #f7f7f7;
   padding: 20px 24px;
 }
 
@@ -328,6 +416,13 @@ body {
   text-align: center;
   letter-spacing: 0.05em;
   color: #303030;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.benefits-item-top {
+  display: flex;
+  justify-content: center;
 }
 
 .benefits-item sup {
@@ -336,6 +431,7 @@ body {
   line-height: calc(22 / 16);
   text-align: center;
   color: #ff6c00;
+  margin-top: 12px;
 }
 
 .benefits-item-text {
@@ -467,3 +563,83 @@ body {
   width: calc((100% - 120px) / 4);
   margin: 15px;
 } */
+
+.contact-wrap {
+  background-color: #111319;
+  background-image: url(../img/contacts-bg.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: calc(50% - 15px) 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.contact-wrap .container {
+  display: flex;
+}
+
+.online {
+  padding-bottom: 183px;
+  width: calc(50% - 15px);
+  margin-right: 30px;
+}
+
+.contacts {
+  padding-bottom: 120px;
+  width: calc(50% - 15px);
+  padding-left: 100px;
+}
+
+.online-title {
+  color: var(--main-title-color);
+}
+
+.contacts-title {
+  color: var(--main-title-color);
+  margin-bottom: 40px;
+}
+
+.contacts-address {
+  margin-bottom: 70px;
+}
+.contacts-address-link {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+
+  color: #9da4bd;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.contacts-list {
+}
+
+.contacts-item:not(:last-child) {
+  margin-bottom: 20px;
+}
+.contacts-link {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+
+  color: #9da4bd;
+}
+
+.contacts-time-title {
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  text-transform: uppercase;
+
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.contacts-time-text {
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: 0.02em;
+
+  color: #9da4bd;
+}
