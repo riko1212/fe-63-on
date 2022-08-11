@@ -52,7 +52,6 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-  outline: 2px solid red;
 }
 
 .visually-hidden {
@@ -117,12 +116,18 @@ body {
   border: 1px solid #ff6c00;
   border-radius: 25px;
   background-color: transparent;
+  transition: background-color 300ms linear, color 300ms linear;
+}
+.btn:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
 }
 
 /* --------------HEADER ------------*/
 
 .header {
-  background-color: gray;
+  position: absolute;
+  width: 100%;
   padding-top: 32px;
   padding-bottom: 32px;
 }
@@ -151,6 +156,7 @@ body {
   line-height: 1.33;
   letter-spacing: 0.1em;
   color: #ffffff;
+  transition: color 300ms linear;
 }
 
 .header-link:hover,
@@ -181,8 +187,27 @@ body {
   display: flex;
 }
 
-.hero-list {
+.hero-soc {
   width: 100px;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 27px;
+  padding-bottom: 40px;
+}
+
+.hero-list {
+  display: flex;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: bottom left;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-list::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  background-color: #303030;
 }
 
 .hero-link {
@@ -475,6 +500,42 @@ body {
   width: calc((100% - 60px) / 3);
 }
 
+.barbers-item:hover .barbers-top-text {
+  transform: translateY(0);
+}
+
+.barbers-top-wrap {
+  position: relative;
+  overflow: hidden;
+}
+.barbers-top-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: 600;
+  line-height: 1.8;
+  background-color: rgba(255, 106, 0, 0.484);
+  padding: 40px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 300ms linear;
+  overflow: auto;
+}
+
+.barbers-top-text::-webkit-scrollbar {
+  width: 10px;
+}
+
+.barbers-top-text::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.barbers-top-text::-webkit-scrollbar-thumb {
+  background-color: rgb(45, 87, 193);
+}
+
 .barbers-item-title {
   font-weight: 400;
   font-size: 18px;
@@ -513,18 +574,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  fill: #ffffff;
+  transition: background-color 300ms linear;
 }
 
-/* .barbers-soc-icon {
-  fill: currentColor;
-} */
+.barbers-soc-icon {
+  fill: #ffffff;
+  transition: fill 300ms linear;
+}
 
-.barbers-soc-link:hover,
+/* .barbers-soc-link:hover,
 .barbers-soc-link:focus {
   background-color: tomato;
   fill: teal;
-}
+} */
 
 .barbers-soc-link:hover,
 .barbers-soc-link:focus {
@@ -642,4 +704,51 @@ body {
   letter-spacing: 0.02em;
 
   color: #9da4bd;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(48, 48, 48, 0.467);
+  transition: opacity 500ms linear, visibility 500ms;
+}
+
+.modal {
+  position: absolute;
+  width: 500px;
+  min-height: 600px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  transition: transform 500ms linear, min-height 500ms linear;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0) rotate(-180deg);
+  min-height: 0;
+}
+
+.modal-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #909090;
+  border-radius: 50%;
+  background-color: transparent;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.no-scroll {
+  overflow: hidden;
 }
