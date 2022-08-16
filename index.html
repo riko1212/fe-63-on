@@ -427,9 +427,87 @@
         </li>
       </ul>
     </footer>
-    <div class="backdrop is-hidden" data-modal>
+    <div class="backdrop" data-modal>
       <div class="modal">
         <button type="button" class="modal-close" data-modal-close>X</button>
+        <p class="modal-title">Заголовок модального вікна</p>
+        <form class="modal-form">
+          <label
+            ><span class="input-title">Ваше імя</span>
+            <input
+              type="text"
+              class="form-input"
+              name="user-name"
+              placeholder="Микола"
+              required
+            />
+          </label>
+          <p class="error">Поле не заповнене</p>
+          <div class="input-field">
+            <label for="user-email" class="input-title">Ваша пошта</label>
+            <input
+              type="email"
+              class="form-input"
+              name="user-email"
+              placeholder="test@mail.com"
+              id="user-email"
+            />
+          </div>
+          <div class="input-field">
+            <label for="user-tel" class="input-title">Ваш телефон</label>
+            <input
+              type="tel"
+              class="form-input"
+              name="user-tel"
+              placeholder="+380 (96) 111-11-11"
+              title="+380 (96) 111-11-11"
+              required
+              id="user-tel"
+              value="+380"
+            />
+            <p class="error">Поле не заповнене</p>
+          </div>
+          <div class="input-field">
+            <label for="user-comment" class="input-title">Ваш коментар</label>
+            <textarea
+              name="user-comment"
+              id="user-comment"
+              class="modal-text"
+              placeholder="Ваш коментар"
+            ></textarea>
+          </div>
+          <fieldset>
+            <legend>Розмір</legend>
+            <label for="big">Велика</label>
+            <input type="radio" id="big" name="size" value="big" checked />
+            <label for="small">Мала</label>
+            <input type="radio" id="small" name="size" value="small" />
+          </fieldset>
+
+          <fieldset>
+            <legend>Додатки</legend>
+            <label for="tomato">Помідори</label>
+            <input type="checkbox" id="tomato" name="toppings" value="tomato" />
+            <label for="cheese">Сир</label>
+            <input
+              type="checkbox"
+              id="cheese"
+              name="toppings"
+              value="cheese"
+              checked
+            />
+            <label for="olives">Оливки</label>
+            <input type="checkbox" id="olives" name="toppings" value="olives" />
+          </fieldset>
+          <select name="city" class="form-input">
+            <option value="none"></option>
+            <option value="london">London</option>
+            <option value="paris">Paris</option>
+            <option value="novyi-rozdil">Novyi Rozdil</option>
+          </select>
+
+          <button type="submit">Go</button>
+        </form>
       </div>
     </div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
