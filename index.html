@@ -382,6 +382,42 @@
         <div class="container">
           <section class="online section">
             <h2 class="title online-title">Online-booking</h2>
+            <form class="online-form">
+              <div class="online-field">
+                <input
+                  type="text"
+                  name="online-name "
+                  class="online-input online-item"
+                  placeholder=" "
+                  id="online-name"
+                  required
+                />
+                <label for="online-name" class="online-label">Name*</label>
+              </div>
+              <div class="online-field">
+                <input
+                  type="tel"
+                  name="online-tel"
+                  class="online-input online-item"
+                  placeholder=" "
+                  id="online-tel"
+                  required
+                />
+                <label for="online-tel" class="online-label">Phone*</label>
+              </div>
+              <div class="online-field">
+                <textarea
+                  class="online-text online-item"
+                  name="online-message"
+                  placeholder=" "
+                  id="online-text"
+                ></textarea>
+                <label for="online-text" class="online-label">Message</label>
+              </div>
+              <button type="submit" class="online-btn btn">
+                Online-booking
+              </button>
+            </form>
           </section>
           <section class="contacts section">
             <h2 class="title contacts-title">Contacts</h2>
@@ -427,21 +463,26 @@
         </li>
       </ul>
     </footer>
-    <div class="backdrop" data-modal>
+    <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal-close" data-modal-close>X</button>
         <p class="modal-title">Заголовок модального вікна</p>
         <form class="modal-form">
-          <label
-            ><span class="input-title">Ваше імя</span>
-            <input
-              type="text"
-              class="form-input"
-              name="user-name"
-              placeholder="Микола"
-              required
-            />
-          </label>
+          <div class="input-field">
+            <label class="input-title">Ваше імя</label>
+            <div class="input-wrap">
+              <input
+                type="text"
+                class="form-input"
+                name="user-name"
+                placeholder="Микола"
+                required
+              />
+              <svg class="input-icon" width="18" height="18">
+                <use href="./img/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+          </div>
           <p class="error">Поле не заповнене</p>
           <div class="input-field">
             <label for="user-email" class="input-title">Ваша пошта</label>
@@ -476,35 +517,24 @@
               placeholder="Ваш коментар"
             ></textarea>
           </div>
-          <fieldset>
-            <legend>Розмір</legend>
-            <label for="big">Велика</label>
-            <input type="radio" id="big" name="size" value="big" checked />
-            <label for="small">Мала</label>
-            <input type="radio" id="small" name="size" value="small" />
-          </fieldset>
 
-          <fieldset>
-            <legend>Додатки</legend>
-            <label for="tomato">Помідори</label>
-            <input type="checkbox" id="tomato" name="toppings" value="tomato" />
-            <label for="cheese">Сир</label>
+          <div class="input-field">
             <input
               type="checkbox"
-              id="cheese"
-              name="toppings"
-              value="cheese"
-              checked
+              name="user-policy"
+              value="true"
+              class="input-check visually-hidden"
+              id="user-policy"
             />
-            <label for="olives">Оливки</label>
-            <input type="checkbox" id="olives" name="toppings" value="olives" />
-          </fieldset>
-          <select name="city" class="form-input">
-            <option value="none"></option>
-            <option value="london">London</option>
-            <option value="paris">Paris</option>
-            <option value="novyi-rozdil">Novyi Rozdil</option>
-          </select>
+            <label for="user-policy" class="check-text">
+              <!-- <span>
+                <svg class="check-icon" width="16" height="15">
+                  <use href="./img/icons.svg#icon-che"></use>
+                </svg>
+              </span> -->
+              Важлива політика користування</label
+            >
+          </div>
 
           <button type="submit">Go</button>
         </form>

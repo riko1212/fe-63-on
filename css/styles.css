@@ -639,6 +639,7 @@ body {
 .contact-wrap .container {
   display: flex;
 }
+/* --------------ONLINE ------------*/
 
 .online {
   padding-bottom: 183px;
@@ -646,14 +647,82 @@ body {
   margin-right: 30px;
 }
 
+.online-title {
+  color: var(--main-title-color);
+  margin-bottom: 44px;
+}
+
+.online-form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.online-field {
+  position: relative;
+  margin-bottom: 44px;
+}
+
+.online-field:last-of-type {
+  width: 100%;
+}
+
+.online-item {
+  border: none;
+  border-bottom: 1px solid rgba(157, 164, 189, 0.4);
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+.online-label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.36;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: transform 250ms linear;
+  color: rgba(157, 164, 189, 0.4);
+}
+
+.online-input {
+  width: 270px;
+  height: 24px;
+}
+
+.online-item:focus {
+  border-color: #ffffff;
+}
+
+.online-item:focus + .online-label,
+.online-item:not(:placeholder-shown) + .online-label {
+  color: #ffffff;
+  transform: translateY(-100%);
+}
+
+.online-item::placeholder {
+}
+
+.online-text {
+  width: 100%;
+  height: 76px;
+  resize: none;
+}
+
+.online-btn {
+  color: var(--main-btn-color);
+}
+
+/* --------------CONTACTS ------------*/
+
 .contacts {
   padding-bottom: 120px;
   width: calc(50% - 15px);
   padding-left: 100px;
-}
-
-.online-title {
-  color: var(--main-title-color);
 }
 
 .contacts-title {
@@ -761,15 +830,37 @@ body {
   text-align: center;
 }
 
+.input-field {
+  margin-bottom: 10px;
+}
+
+.input-wrap {
+  position: relative;
+}
+
 .form-input {
   width: 100%;
   height: 50px;
   border: 1px solid #999999;
   border-radius: 5px;
-  margin-bottom: 10px;
-  padding-left: 10px;
+  padding-left: 30px;
   font-size: 12px;
   color: teal;
+}
+
+.form-input:focus {
+  outline-color: var(--accent-color);
+}
+
+.input-icon {
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.form-input:focus + .input-icon {
+  fill: var(--accent-color);
 }
 
 .form-input::placeholder {
@@ -809,3 +900,90 @@ body {
   resize: none;
   padding: 10px;
 }
+
+.check-text {
+  font-size: 14px;
+  color: #555555;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.check-text::before {
+  content: '';
+  width: 40px;
+  height: 22px;
+  border: 1px solid #bab6b6;
+  border-radius: 50px;
+  margin-right: 10px;
+  transition: background-color 300ms linear;
+}
+
+.check-text::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 2px;
+  width: 18px;
+  height: 18px;
+  background-color: #cababa;
+  border-radius: 50%;
+  transition: transform 300ms linear, background-color 300ms linear;
+}
+
+.input-check:checked + .check-text::after {
+  transform: translate(16px);
+  background-color: #ffffff;
+}
+
+.input-check:checked + .check-text::before {
+  background-color: #dea03a;
+}
+
+/* .check-text span {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #090b13;
+  border-radius: 3px;
+  margin-right: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 300ms linear, border-color 300ms linear;
+}
+
+.check-icon {
+  fill: transparent;
+  transition: fill 300ms linear;
+}
+
+.input-check:checked + .check-text span {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.input-check:checked + .check-text .check-icon {
+  fill: #ffffff;
+}
+
+.input-check:focus + .check-text span {
+  border-color: var(--accent-color);
+} */
+
+/* .check-text::before {
+  content: '';
+  width: 16px;
+  height: 15px;
+  border: 2px solid #090b13;
+  border-radius: 3px;
+  margin-right: 5px;
+  transition: background-color 300ms linear;
+}
+
+.input-check:checked + .check-text::before {
+  background-color: var(--accent-color);
+  background-image: url(../img/check-icon.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+} */
