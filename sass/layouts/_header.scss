@@ -1,0 +1,54 @@
+.header {
+  position: absolute;
+  width: 100%;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  .container {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.header-logo {
+  margin-right: 130px;
+}
+
+.header-list {
+  display: flex;
+  column-gap: 30px;
+}
+
+/* .header-item:not(:last-child) {
+  margin-right: 30px;
+} */
+.header-link,
+.header-tel {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  transition: color 300ms linear;
+}
+
+.header-link:hover,
+.header-link:focus {
+  color: #ff6c00;
+}
+
+.header-connect {
+  margin-left: auto;
+}
+
+/* .header-tel {
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+} */
+
+.header-btn {
+  color: #ffffff;
+  margin-left: 30px;
+}
