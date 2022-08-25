@@ -1,27 +1,26 @@
-.barbers-pre-title {
-  color: #303030;
+.barbers__pre-title {
   margin: 20px;
 }
 
-.barbers-title {
+.barbers__title {
   color: var(--second-title-color);
   margin-bottom: 44px;
 }
 
-.barbers-list {
+.card-list {
   display: flex;
   gap: 30px;
 }
 
-.barbers-item {
+.card-list__item {
   width: calc((100% - 60px) / 3);
 }
 
-.barbers-top-wrap {
+.card-list__top-wrap {
   position: relative;
   overflow: hidden;
 }
-.barbers-top-text {
+.card-list__top-text {
   position: absolute;
   top: 0;
   left: 0;
@@ -35,7 +34,7 @@
   transform: translateY(100%);
   transition: transform 300ms linear;
   overflow: auto;
-  .barbers-item:hover & {
+  .card-list__item:hover & {
     transform: translateY(0);
   }
   &::-webkit-scrollbar {
@@ -51,7 +50,7 @@
   }
 }
 
-.barbers-item-title {
+.card-list__item-title {
   font-weight: 400;
   font-size: 18px;
   line-height: calc(25 / 18);
@@ -60,7 +59,7 @@
   color: #303030;
   margin-bottom: 8px;
 }
-.barbers-item-text {
+.card-list__item-text {
   font-size: 14px;
   line-height: calc(19 / 14);
   text-align: center;
@@ -69,25 +68,24 @@
   margin-bottom: 30px;
 }
 
-.barbers-wrap {
+.card-list__wrap {
   padding-top: 30px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-.barbers-soc {
+.media {
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
-.barbers-soc-link {
+.media__link {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   background-color: turquoise;
-  display: flex;
-  align-items: center;
+  @extend %align-list;
   justify-content: center;
   transition: background-color 300ms linear;
   &:hover,
@@ -96,7 +94,7 @@
   }
 }
 
-.barbers-soc-icon {
+.media__icon {
   fill: #ffffff;
   transition: fill 300ms linear;
   .barbers-soc-link:hover &,

@@ -4,8 +4,7 @@
   line-height: 1.36;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  display: flex;
-  align-items: center;
+  @extend %align-list;
   gap: 20px;
   &::before {
     content: '';
@@ -13,4 +12,12 @@
     height: 1px;
     background-color: currentColor;
   }
+}
+
+.pre-title--color-light {
+  color: rgba(157, 164, 189, 0.6);
+}
+
+.pre-title--color-dark {
+  color: #303030;
 }
